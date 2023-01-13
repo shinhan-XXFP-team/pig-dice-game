@@ -15,9 +15,17 @@ class Pig_dice_game:
         pass
     
     def turn(self):
-        pass
+        #TOTAL_SCORE가 100이상이면 Win 메소드로 이동
+        if self.TotalScore>=100:
+            self.Win()
+        else:
+            #주사위를 굴린다.
+            self.roll_dice()
     
     def bank(self):
+        pass
+
+    def Win(self):
         pass
     
 
