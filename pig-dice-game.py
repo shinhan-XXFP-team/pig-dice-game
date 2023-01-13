@@ -51,7 +51,6 @@ class Pig_dice_game:
             print(f"주사위 값이 {self.dice_number}이기 때문에 차례를 종료하겠습니다.")
             self.turn()
             
-    
     def turn(self):
         #TOTAL_SCORE가 100이상이면 Win 메소드로 이동
         if self.TotalScore>=100:
@@ -66,8 +65,7 @@ class Pig_dice_game:
         
 
     def Win(self):
-        pass
-    
+        print(f"{self.name}님이 {self.TotalScore} 이기셨습니다.")
 
 player1=Pig_dice_game("user1")
 
