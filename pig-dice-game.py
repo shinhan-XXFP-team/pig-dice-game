@@ -42,7 +42,6 @@ class Pig_dice_game:
                         self.current_score+=self.dice_number
                         print(f"현재 총 주사위 숫자 : {self.current_score}")
                 elif choose=='n':
-                    print(f"현재 총 주사위 숫자 {self.current_score} 을 BANK하겠습니다. ")
                     self.bank(self.current_score)
                 else:
                     print("잘못 입력하셨습니다 y 또는 n을 입력해주세요")
@@ -57,13 +56,14 @@ class Pig_dice_game:
             self.Win()
         else:
             #주사위를 굴린다.
-            self.roll_dice
+            self.roll_dice()
     
-    def bank(self):
+    def bank(self, score):                 
+        print(f"현재 총 주사위 숫자 {self.current_score} 을 BANK하겠습니다.")
         self.TotalScore += self.current_score
+        print(f"현재 TotalScore= {self.TotalScore}")
         self.turn()
         
-
     def Win(self):
         print(f"{self.name}님이 {self.TotalScore} 이기셨습니다.")
 
