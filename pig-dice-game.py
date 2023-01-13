@@ -4,7 +4,12 @@ class Pig_dice_game:
         self.TotalScore=0
 
     def new_game(self):
-        pass    
+        print("********************")
+        print("********************")
+        print("**** GAME START ****")
+        print("********************")
+        print("********************")
+        self.turn()
 
     def roll_dice(self):
         pass
