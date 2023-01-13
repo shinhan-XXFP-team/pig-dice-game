@@ -3,6 +3,7 @@ from random import randint
 User_name=""
 User_TotalScore=0
 User_dice_number=0
+Computer_TotalScore=0
 
 # 게임 시작
 def new_game():
@@ -14,6 +15,7 @@ def new_game():
     # 시작을 했으므로 turn메소드로 넘어간다.
     User_name=input("당신의 이름은 무엇입니까? : ")
     turn()
+
 
     # 주사위를 굴리는 페이지
 def roll_dice():
@@ -40,7 +42,7 @@ def roll_dice():
                     current_score+=dice_number
                     print(f"현재 총 주사위 숫자 : {current_score}")
             elif choose=='n':
-                bank(current_score)
+                bank(User_TotalScore,current_score)
             else:
                 print("잘못 입력하셨습니다 y 또는 n을 입력해주세요")
     # 주사위 값이 1이라면
@@ -54,12 +56,12 @@ def turn():
     if User_TotalScore>=100:
         Win()
     elif Computer_TotalScore>=100:
-        Com_Win(0)
+        Com_Win()
     else:
         #주사위를 굴린다.
         roll_dice()
 
-def bank(current_score):                 
+def bank(User_TotalScore,current_score):                 
     print(f"현재 총 주사위 숫자 {current_score} 을 BANK하겠습니다.")
     User_TotalScore += current_score
     print(f"현재 User_TotalScore= {User_TotalScore}")
@@ -72,7 +74,7 @@ def Com_Win():
     pass
 
 #게임 시작
-new_game("user1")
+new_game()
 
 
 #이후 컴퓨터 진행
