@@ -20,15 +20,15 @@ class Pig_dice_game:
     # 주사위를 굴리는 페이지
     def roll_dice(self):
         # 주사위 1번은 무조건 굴린다.
-        current_score=0
+        self.current_score=0
         choose='y'
         print(f"현재 {self.name}님의 차례입니다.")
         self.dice_number=randint(1,6)
         print(f"{self.name}님의 주사위 숫자는 {self.dice_number}입니다!!")
         # 주사위 값이 1이 아니라면 
         if self.dice_number!=1:
-            current_score+=self.dice_number
-            print(f"현재 주사위 CURRENT SCORE = {current_score}")
+            self.current_score+=self.dice_number
+            print(f"현재 주사위 CURRENT SCORE = {self.current_score}")
             #y를 선택했다면 반복
             while choose=='y':
                 choose=input("주사위를 더 돌린 건가요? (네=y/아니요=n): ")
@@ -39,11 +39,11 @@ class Pig_dice_game:
                         print(f"주사위 값이 {self.dice_number}이기 때문에 차례를 종료하겠습니다.")
                         self.turn()
                     else:
-                        current_score+=self.dice_number
-                        print(f"현재 총 주사위 숫자 : {current_score}")
+                        self.current_score+=self.dice_number
+                        print(f"현재 총 주사위 숫자 : {self.current_score}")
                 elif choose=='n':
-                    print(f"현재 총 주사위 숫자 {current_score} 을 BANK하겠습니다. ")
-                    self.bank(current_score)
+                    print(f"현재 총 주사위 숫자 {self.current_score} 을 BANK하겠습니다. ")
+                    self.bank(self.current_score)
                 else:
                     print("잘못 입력하셨습니다 y 또는 n을 입력해주세요")
         # 주사위 값이 1이라면
@@ -58,10 +58,12 @@ class Pig_dice_game:
             self.Win()
         else:
             #주사위를 굴린다.
-            self.roll_dice()
+            self.roll_dice
     
-    def bank(self, score):
-        pass
+    def bank(self):
+        self.TotalScore += self.current_score
+        self.turn()
+        
 
     def Win(self):
         pass
