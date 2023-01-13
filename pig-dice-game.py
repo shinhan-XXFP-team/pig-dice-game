@@ -58,11 +58,12 @@ class Pig_dice_game:
             self.Win()
         else:
             #주사위를 굴린다.
-            self.roll_dice()
+            self.roll_dice
     
     def bank(self):
-        if self.TotalScore == self.current_score:
-            self.turn()
+        self.TotalScore += self.current_score
+        self.turn()
+        
 
     def Win(self):
         pass
