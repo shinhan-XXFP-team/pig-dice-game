@@ -23,7 +23,8 @@ class Pig_dice_game:
             self.roll_dice()
     
     def bank(self):
-        pass
+        if self.TotalScore == current_score:
+            self.turn()
 
     def Win(self):
         pass
